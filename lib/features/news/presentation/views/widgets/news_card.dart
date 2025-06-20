@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_stream/features/news/presentation/views/widgets/news_actions.dart';
+import 'package:news_stream/features/news/presentation/views/widgets/news_image.dart';
 import '../../../data/models/article_model.dart';
 
 class NewsCard extends StatelessWidget {
@@ -9,20 +11,10 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ClipRRect(
-            borderRadius: BorderRadius.circular(6),
-            child: Image.network(
-              articleModel.image ??
-                  'https://thumbs.dreamstime.com/b/news-woodn-dice-depicting-letters-bundle-small-newspapers-leaning-left-dice-34802664.jpg',
-              height: 200,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            )),
-        const SizedBox(
-          height: 12,
-        ),
+        NewsImage(articleModel: articleModel),
+        const SizedBox(height: 12),
         Text(
           articleModel.title,
           maxLines: 2,
@@ -33,13 +25,25 @@ class NewsCard extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        const SizedBox(
-          height: 8,
-        ),
+        const SizedBox(height: 8),
         Text(
           articleModel.subtitle ?? '',
           maxLines: 2,
+          overflow: TextOverflow.ellipsis,
           style: const TextStyle(color: Colors.black54, fontSize: 14),
+        ),
+        const SizedBox(height: 8),
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                articleModel.source ?? '',
+                maxLines: 1,
+                style: const TextStyle(color: Colors.orange, fontSize: 14.5),
+              ),
+            ),
+            NewsActions(newsUrl: articleModel.url ?? ''),
+          ],
         ),
       ],
     );

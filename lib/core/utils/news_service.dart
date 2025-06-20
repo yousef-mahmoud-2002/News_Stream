@@ -2,38 +2,28 @@ import 'package:dio/dio.dart';
 import '../../features/news/data/models/article_model.dart';
 
 class NewsService {
-  String baseUrl = 'https://api.mediastack.com/v1/news';
-  String apiKey = '8d57aa9a4a29ba965f798a3c4ea1c01d';
+  static const String baseUrl = 'https://api.mediastack.com/v1/news';
+  static const String apiKey = '6e24aa21c4da403ac750f5a8bc7b2701';
 
-  Future<List<ArticleModel>> getGeneralNews() async {
-    return await parse('sources=cnn,bbc');
+  final Dio dio = Dio();
+
+  Future<List<ArticleModel>> fetchGeneralNews() async {
+    return await fetchNews(
+      'sources=cnn,bbc,google-news',
+    );
   }
 
   Future<List<ArticleModel>> searchNews(String category) async {
-    return await parse('categories=$category');
+    return await fetchNews('categories=$category');
   }
 
-  Future<List<ArticleModel>> parse(String request) async {
+  Future<List<ArticleModel>> fetchNews(String request) async {
     try {
-      Response response =
-          await Dio().get('$baseUrl?access_key=$apiKey&$request');
+      final response = await dio.get('$baseUrl?access_key=$apiKey&$request');
 
-      Map<String, dynamic> jsonData = response.data;
+      final data = response.data['data'] as List<dynamic>;
 
-      List<dynamic> articles = jsonData['data'];
-
-      List<ArticleModel> articlesList = [];
-
-      for (var article in articles) {
-        ArticleModel articleModel = ArticleModel(
-          image: article['image'],
-          title: article['title'],
-          subtitle: article['description'],
-          urlwebs: article['url'],
-        );
-        articlesList.add(articleModel);
-      }
-      return articlesList;
+      return data.map((article) => ArticleModel.fromJson(article)).toList();
     } catch (e) {
       return [];
     }

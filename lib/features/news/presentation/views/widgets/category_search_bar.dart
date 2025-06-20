@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'search_list.dart';
+import '../search_news_view.dart';
 
 class CategorySearchBar extends StatefulWidget {
   const CategorySearchBar({super.key});
@@ -10,7 +10,7 @@ class CategorySearchBar extends StatefulWidget {
 
 class CategorySearchBarState extends State<CategorySearchBar> {
   final TextEditingController _textEditingController = TextEditingController();
-  final List<String> _options = [
+  final List<String> options = [
     'business',
     'entertainment',
     'general',
@@ -24,7 +24,7 @@ class CategorySearchBarState extends State<CategorySearchBar> {
   Widget build(BuildContext context) {
     return Autocomplete<String>(
       optionsBuilder: (TextEditingValue textEditingValue) {
-        return _options.where(
+        return options.where(
           (String option) {
             return option
                 .toLowerCase()
@@ -41,7 +41,7 @@ class CategorySearchBarState extends State<CategorySearchBar> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                return SearchNewsListViewBuilder(category: selectedOption);
+                return SearchNewsView(category: selectedOption);
               },
             ),
           ).then((_) {
