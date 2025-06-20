@@ -1,16 +1,35 @@
-# news_stream
+# 📰 News Stream App
 
-A new Flutter project.
+**News Stream** is a modern Flutter application that allows users to explore the latest news from various sources with an elegant UI and smooth experience.
 
-## Getting Started
+## 📱 Features
 
-This project is a starting point for a Flutter application.
+- 🔎 **Search News** by category
+- 🔄 **Refactored Architecture** for better performance
+- 📤 **Share News** easily with friends
+- 🌐 **Open Full News** on original source website
+- ⏳ **Loading Animations** for articles and images using Skeleton Loading
+- 🧭 **Responsive Design** that adapts to different screen sizes
 
-A few resources to get you started if this is your first Flutter project:
+## 📦 Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter with Dart
+- BLoC for state management
+- Dio package for API requests
+- Skeletonizer for loading animation
+- URL Launcher for external links
+- Share Plus for sharing content
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Release Version: `v1.1.0`
+
+### What's New:
+- Added **search** functionality
+- Added **news sharing**
+- Open full article from the app
+- Improved **UI** and **code structure**
+- Enhanced loading experience with animations
+
+
+## 🔗 Download
+
+You can download the latest release from the [Releases section](https://github.com/yousef-mahmoud-2002/news_stream/releases/tag/v1.1.0)
