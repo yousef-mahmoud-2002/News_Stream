@@ -2,6 +2,8 @@
 
 **News Stream** is a modern Flutter application that allows users to explore the latest news from various sources with an elegant UI and smooth experience.
 
+---
+
 ## 📱 Features
 
 - 🔎 **Search News** by category
@@ -10,6 +12,8 @@
 - 🌐 **Open Full News** on original source website
 - ⏳ **Loading Animations** for articles and images using Skeleton Loading
 - 🧭 **Responsive Design** that adapts to different screen sizes
+
+---
 
 ## 📦 Tech Stack
 
@@ -20,6 +24,16 @@
 - URL Launcher for external links
 - Share Plus for sharing content
 
+---
+
+## 📸 Screenshots
+
+| Home Screen | Search Bar | Search Result Screen |
+|-------------|------------|----------------------|
+| ![home](screenshots/home.jpg) | ![seachBar](screenshots/searchBar.jpg) | ![searchResult](screenshots/searchResult.jpg) |
+
+---
+
 ## 🚀 Release Version: `v1.1.0`
 
 ### What's New:
@@ -29,6 +43,7 @@
 - Improved **UI** and **code structure**
 - Enhanced loading experience with animations
 
+---
 
 ## 🔗 Download
 
