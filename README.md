@@ -30,7 +30,7 @@
 
 | Home Screen | Search Bar | Search Result Screen |
 |-------------|------------|----------------------|
-| ![home](screenshots/home.jpg) | ![seachBar](screenshots/searchBar.jpg) | ![searchResult](screenshots/searchResult.jpg) |
+| ![home](screenshots/home.png) | ![seachBar](screenshots/searchBar.png) | ![searchResult](screenshots/searchResult.png) |
 
 ---
 
